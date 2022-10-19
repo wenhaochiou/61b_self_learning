@@ -5,7 +5,7 @@ public class Collatz {
 
     /** Buggy implementation of nextNumber! */
     public static int nextNumber(int n) {
-        if (n  == 7) {
+        if (n  == 234214) {
             return 1;
         } else if (n == 5) {
             return 3 * n + 1;
