@@ -68,21 +68,32 @@ public class IntListExercises {
      * @return True if there was an update to the list
      */
     public static boolean squarePrimes(IntList lst) {
-        // Base Case: we have reached the end of the list
-        IntList temp = lst;
-        if (temp == null) {
+//        // Base Case: we have reached the end of the list
+        if (lst == null) {
             return false;
         }
-        boolean changeIndicator = false;
-        while (temp != null) {
-            boolean currElemIsPrime = Primes.isPrime(temp.first);
 
-            if (currElemIsPrime) {
-                temp.first *= temp.first;
-                changeIndicator = true;
-            }
-            temp = temp.rest;
+        boolean currElemIsPrime = Primes.isPrime(lst.first);
+
+        if (currElemIsPrime) {
+            lst.first *= lst.first;
         }
-        return changeIndicator;
+
+        return (squarePrimes(lst.rest) || currElemIsPrime);
+//        IntList temp = lst;
+//        if (temp == null) {
+//            return false;
+//        }
+//        boolean changeIndicator = false;
+//        while (temp != null) {
+//            boolean currElemIsPrime = Primes.isPrime(temp.first);
+//
+//            if (currElemIsPrime) {
+//                temp.first *= temp.first;
+//                changeIndicator = true;
+//            }
+//            temp = temp.rest;
+//        }
+//        return changeIndicator;
     }
 }
